@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { Header, Icon, Item } from 'semantic-ui-react';
 
-export interface ICharacter {
+export interface Character {
   name: string;
   age: number;
   height?: number;
 }
 
-interface ICharacterListProps {
+interface CharacterListProps {
   school: string;
-  characters: ICharacter[];
+  characters: Character[];
 }
 
-class CharacterList extends React.Component<ICharacterListProps> {
-  public render() {
+class CharacterList extends React.Component<CharacterListProps> {
+  render() {
     const { school, characters } = this.props;
 
     return (

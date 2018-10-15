@@ -3,11 +3,11 @@ import { Button, Card, Statistic } from 'semantic-ui-react';
 
 import './App.css';
 
-interface IAppState {
+interface AppState {
   count: number;
 }
 
-class App extends React.Component<{}, IAppState> {
+class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
     this.state = { count: 0 };
@@ -15,15 +15,15 @@ class App extends React.Component<{}, IAppState> {
     this.decrement = this.decrement.bind(this);
   }
 
-  public increment() {
+  increment() {
     this.setState({ count: this.state.count + 1 });
   }
 
-  public decrement() {
+  decrement() {
     this.setState({ count: this.state.count - 1 });
   }
 
-  public render() {
+  render() {
     return (
       <div className="container">
         <header>
