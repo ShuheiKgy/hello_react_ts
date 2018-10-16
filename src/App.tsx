@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, Card, Icon, Statistic } from 'semantic-ui-react';
+import CharacterList, { Character } from './CharacterList';
 
 import './App.css';
 
@@ -38,6 +39,19 @@ class App extends React.Component<{}, AppState> {
   };
 
   render() {
+    const characters: Character[] = [
+      {
+        name: '山田太郎',
+        age: 14,
+        height: 160,
+      },
+      {
+        name: '高橋あきこ',
+        age: 13,
+        height: 155,
+      },
+    ];
+
     return (
       <div className="container">
         <header className="App-header">
@@ -54,6 +68,7 @@ class App extends React.Component<{}, AppState> {
             </Button>
           </Card.Content>
         </Card>
+        <CharacterList school="ABC中学校" characters={characters} />
       </div>
     );
   }
