@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Button, Card, Icon, Statistic } from 'semantic-ui-react';
 import CharacterList, { Character } from './CharacterList';
+import Timer from './containers/Timer';
 
 import './App.css';
 
@@ -54,20 +54,10 @@ class App extends React.Component<{}, AppState> {
 
     return (
       <div className="container">
-        <header className="App-header">
-          <h1 className="App-title">タイマー</h1>
+        <header>
+          <h1>Newタイマー</h1>
         </header>
-        <Card>
-          <Statistic className="number-board">
-            <Statistic.Label>time</Statistic.Label>
-            <Statistic.Value>{this.state.timeLeft}</Statistic.Value>
-          </Statistic>
-          <Card.Content>
-            <Button color="red" fluid={true} onClick={this.reset}>
-              <Icon name="redo" /> Reset
-            </Button>
-          </Card.Content>
-        </Card>
+        <Timer limit={60} />
         <CharacterList school="ABC中学校" characters={characters} />
       </div>
     );

@@ -52,7 +52,7 @@ const enhance = compose<EnhancedTimerProps, TimerProps>(
     },
     componentDidUpdate() {
       const { timeLeft, reset } = this.props;
-      if (timeLeft) {
+      if (timeLeft === 0) {
         reset();
       }
     },
